@@ -4,20 +4,16 @@ import React, { useState, useEffect } from "react";
 import Login from "./Login";
 import Join from "./Join";
 import Fetcher from "./fetcher";
-import { Link,BrowserRouter, Switch , Route} from 'react-router-dom'
+import { Link,MemoryRouter, Switch , Route} from 'react-router-dom'
 
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from "./firebase.config";
 firebase.initializeApp(firebaseConfig);
+
 var circle = {
-   /*width:'300px',
-    height:'300px',
-    backgroundImage: 'url('+logo+')',
-    backgroundRepeat  : 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain'*/
+
     display:"inline-block",
     backgroundColor: '#E94F37',
     borderRadius: "50%",
@@ -63,8 +59,8 @@ function App() {
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
         <main>
             <Switch>
-                <Route exact path='/' render={(props) => <Greeting isLoggedIn={isLoggedIn} {...props} />} />
                 <Route path='/join' component={Join}/>
+                <Route  path='/' render={(props) => <Greeting isLoggedIn={isLoggedIn} {...props} />} />
             </Switch>
         </main>
         </AuthContext.Provider>
@@ -73,7 +69,7 @@ function App() {
 }
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-    <BrowserRouter>
+    <MemoryRouter>
         <App />
-    </BrowserRouter>
+    </MemoryRouter>
     , rootElement);

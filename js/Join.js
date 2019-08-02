@@ -34,7 +34,7 @@ const Join = () => {
     var inner = {
         width:'50%',
         margin: 'auto',
-        padding:'40px 0',
+        padding:'25% 0',
         textAlign:'center',
         color: '#fff'
     };
