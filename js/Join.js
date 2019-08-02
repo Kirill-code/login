@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "./app";
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import {Link} from "react-router-dom";
 
 const Join = () => {
   const [email, setEmail] = useState("");
@@ -107,6 +108,7 @@ const Join = () => {
             <br/>
             {<button type="submit">Регистрация</button>}
               <p></p>
+              <Link to="/">назад</Link>
 
 
 

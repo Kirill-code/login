@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "./app";
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import {Link} from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -84,6 +85,8 @@ const Login = () => {
         </button>*/}
         <button type="submit">Логин</button>
         <p></p>
+        <Link to="/join">Регистрация</Link>
+
         <span>{error}</span>
       </form>
     </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Login from "./Login";
 import Join from "./Join";
 import Fetcher from "./fetcher";
+import { Link,BrowserRouter, Switch , Route} from 'react-router-dom'
 
 
 import firebase from 'firebase/app';
@@ -35,9 +36,7 @@ export function Greeting(props) {
     return (
       <div style={circle}>
            <Login isLoggedIn={isLoggedIn} />
-{/*
-          <Link to="/join">join</Link>
-*/}
+
       </div>);
       } 
 }
@@ -62,19 +61,19 @@ function App() {
   return (
 
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
-      <Greeting  isLoggedIn={isLoggedIn} />
-       {/* <main>
+        <main>
             <Switch>
-                <Route exact path='/' component={App}/>
+                <Route exact path='/' render={(props) => <Greeting isLoggedIn={isLoggedIn} {...props} />} />
                 <Route path='/join' component={Join}/>
             </Switch>
-        </main>*/}
+        </main>
         </AuthContext.Provider>
 
   );
 }
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-
+    <BrowserRouter>
         <App />
+    </BrowserRouter>
     , rootElement);
