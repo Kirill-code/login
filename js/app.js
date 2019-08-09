@@ -13,9 +13,9 @@ import firebaseConfig from "./firebase.config";
 firebase.initializeApp(firebaseConfig);
 
 var circle = {
-
+    fontFamily: 'Roboto, sans-serif',
     display:"inline-block",
-    backgroundColor: '#E94F37',
+    backgroundColor: '#ff9900',
     borderRadius: "50%",
     width:300,
     height:300,

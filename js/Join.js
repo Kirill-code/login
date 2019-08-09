@@ -22,7 +22,6 @@ const Join = () => {
         .createUserWithEmailAndPassword(email, password)
         .then(res => {
           console.log(res)
-          history.push('/reports')
           if (res.user) Auth.setLoggedIn(true);
         })
         .catch(e => {
@@ -80,7 +79,7 @@ const Join = () => {
   return (
       <div style={circle}>
         <div style={inner}>
-          <h2>Имя<br/> пользователя</h2>
+          <h2>Регистрация</h2>
           <form onSubmit={e => handleForm(e)}>
             <input
               style={inp}
@@ -109,9 +108,7 @@ const Join = () => {
             {<button type="submit">Регистрация</button>}
               <p></p>
               <Link to="/">назад</Link>
-
-
-
+              <p></p>
               <span>{error}</span>
           </form>
         </div>

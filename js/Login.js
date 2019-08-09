@@ -84,10 +84,11 @@ const Login = () => {
           Login With Google
         </button>*/}
         <button type="submit">Логин</button>
+        <br/><span>{error}</span>
         <p></p>
+
         <Link to="/join">Регистрация</Link>
 
-        <span>{error}</span>
       </form>
     </div>
   );
