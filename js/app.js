@@ -5,21 +5,12 @@ import Login from "./Login";
 import Join from "./Join";
 import Fetcher from "./fetcher";
 import { Link,MemoryRouter, Switch , Route} from 'react-router-dom'
-
-
+import {Style} from "./styles"
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from "./firebase.config";
 firebase.initializeApp(firebaseConfig);
 
-var circle = {
-    fontFamily: 'Roboto, sans-serif',
-    display:"inline-block",
-    backgroundColor: '#ff9900',
-    borderRadius: "50%",
-    width:300,
-    height:300,
-};
 
 export const AuthContext = React.createContext(null);
 
@@ -27,10 +18,10 @@ export function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
     return (
-      <div><Fetcher/></div>);
+      <Fetcher/>);
   }else{
     return (
-      <div style={circle}>
+      <div style={Style.Circle}>
            <Login isLoggedIn={isLoggedIn} />
 
       </div>);
@@ -57,7 +48,7 @@ function App() {
   return (
 
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
-        <main>
+        <main style={Style.Mainer}>
             <Switch>
                 <Route path='/join' component={Join}/>
                 <Route  path='/' render={(props) => <Greeting isLoggedIn={isLoggedIn} {...props} />} />

@@ -2,35 +2,35 @@ import React from "react";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Greeting } from "./app";
-import logo from '../images/logo.png';
 
 var loading="Загрузка...";
 var againtry="Пожалуйста, попробуйте позже.";
 var textName="Ф.И.";
 var textInstr="Инструктор";
-var textHowlong="Длительность";
+var textHowlong="Дата окончания";
 
 var subscription= {
-    width:"350px",
-    height:"300px",
-    fontFamily: 'Roboto, sans-serif'
-
+    width:"100%",
+    height:"100%",
+/*    fontFamily: 'Roboto, sans-serif',*/
+    borderRadius:"15px"
 };
 
 var topHead={
-    backgroundColor: '#d7b039',
-    height:"130px"
-
+    backgroundImage: 'linear-gradient(-70deg, #F6A000, #DE7400)',
+    height:"40%",
+    paddingTop:"10px"
 };
 var lines={
     float:"left",
-    width:"80%",
-    height:"30px",
-    display:"inline-block"
+    width:"100%",
+    height:"5%",
+    display:"inline-block",
 }
 var left={
     float:"left",
-    width: "70%"
+    width: "68%",
+    paddingLeft:"3px"
 }
 var right={
     float:"left",
@@ -39,7 +39,8 @@ var right={
 var tableiro={
     float:"left",
     width:"100%",
-    marginTop:"5px"
+    backgroundColor:"#F6A000",
+    padding:"3px 0"
 }
 var plaintext={
     float:"left",
@@ -48,11 +49,13 @@ var plaintext={
 };
 var field= {
     float:"right",
-    height:"20px",
+    height:"10%",
     width:"40%",
     display:"inline-block",
     backgroundColor: '#ddd78a',
     borderRadius: "6px",
+    textAlign:"center"
+
 };
 
 var dates= {
@@ -60,9 +63,13 @@ var dates= {
     display:"inline-block",
     backgroundColor: '#ffffff',
     borderRadius: "5px",
-    marginLeft:"3px"
+    marginLeft:"5px"
 };
-
+var logoStyle={
+    display:"block",
+    margin:"0 auto",
+    paddingTop:"15px"
+}
 
 
 export default class Fetcher extends React.Component {
@@ -126,24 +133,20 @@ export default class Fetcher extends React.Component {
                         <div style={topHead}>
                             <div  style={left}/*left*/>
                                 <div style={lines}>
-                                    <h2>Абонемент</h2>
-
-                                </div>
-                                <div style={lines}>
                                     <p style={plaintext}>{textName}</p>
-                                    <p style={field}>123</p>
+                                    <p style={field}>{items.userName+" "+items.userSurName}</p>
                                 </div>
                                 <div  style={lines}>
                                     <p style={plaintext}>{textInstr}</p>
-                                    <p style={field}>123</p>
+                                    <p style={field}>{items.instrName}</p>
                                 </div>
                                 <div  style={lines}>
                                     <p style={plaintext}>{textHowlong}</p>
-                                    <p style={field}>123</p>
+                                    <p style={field}>{items.finishDate}</p>
                                 </div>
                             </div>
                             <div style={right}>
-                                <img src={logo} alt="Logo" />
+                                <img style={logoStyle} src="https://static.tildacdn.com/tild6130-6561-4136-b262-326537376464/logo_school_80.png" alt="Логотип" />
                             </div>
                         </div>
                         <div style={tableiro}>
