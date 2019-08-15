@@ -88,7 +88,7 @@ export default class Fetcher extends React.Component {
         var user = firebase.auth().currentUser;
         if (user != null) {
 
-            fetch("http://localhost:8080/uidsubscription/" + firebase.auth().currentUser.uid)
+            fetch("http://94.177.240.97:8080/subscription-server/uidsubscription/" + firebase.auth().currentUser.uid)
                 .then(function (response) {
                     if (response.ok) {
                         return response.json();
