@@ -13,8 +13,8 @@ firebase.initializeApp(firebaseConfig);
 
 export const AuthContext = React.createContext(null);
 const mainer={
-    width:"550px",
-    height:"550px"
+    width:"",
+    height:""
 };
 var circle={
     display:"inline-block",

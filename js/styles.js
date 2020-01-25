@@ -1,7 +1,6 @@
 
  const Mainer={
-        width:"550px",
-        height:"550px"
+
     };
  const Circle={
         display:"inline-block",
