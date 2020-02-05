@@ -21,8 +21,7 @@ var subscription= {
 
 var topHead={
     backgroundImage: 'linear-gradient(-70deg, #F6A000, #DE7400)',
-    height:"250px",
-
+    height:"150px",
     paddingTop:"10px"
 };
 var lines={
