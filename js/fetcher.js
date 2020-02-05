@@ -2,6 +2,9 @@ import React from "react";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Greeting } from "./app";
+import QRCode from 'qrcode.react';
+
+
 
 var loading="Загрузка...";
 var againtry="Пожалуйста, попробуйте позже.";
@@ -18,13 +21,13 @@ var subscription= {
 
 var topHead={
     backgroundImage: 'linear-gradient(-70deg, #F6A000, #DE7400)',
-    height:"40%",
+    height:"250px",
+
     paddingTop:"10px"
 };
 var lines={
     float:"left",
     width:"100%",
-    height:"5%",
     display:"inline-block",
 }
 var left={
@@ -119,7 +122,7 @@ export default class Fetcher extends React.Component {
     render() {
         const {error, isLoaded, visits, items} = this.state;
         const chunkArray = (arr, cnt) => arr.reduce((prev, cur, i, a) => !(i % cnt) ? prev.concat([a.slice(i, i + cnt)]) : prev, []);
-        const output=chunkArray(visits, 4);
+        const output=chunkArray(visits, 3);
         console.log(items);
         if (error) {
             return <div>
@@ -146,7 +149,9 @@ export default class Fetcher extends React.Component {
                                 </div>
                             </div>
                             <div style={right}>
+{/*
                                 <img style={logoStyle} src="https://static.tildacdn.com/tild6130-6561-4136-b262-326537376464/logo_school_80.png" alt="Логотип" />
+*/}<QRCode value={"suryuid"+firebase.auth().currentUser.uid} />
                             </div>
                         </div>
                         <div style={tableiro}>
