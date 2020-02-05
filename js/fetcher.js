@@ -18,10 +18,14 @@ var subscription= {
 /*    fontFamily: 'Roboto, sans-serif',*/
     borderRadius:"15px"
 };
+var QRquad={
+    width:"100px",
+    height:"100px",
+}
 
 var topHead={
     backgroundImage: 'linear-gradient(-70deg, #F6A000, #DE7400)',
-    height:"150px",
+    height:"110px",
     paddingTop:"10px"
 };
 var lines={
@@ -150,7 +154,7 @@ export default class Fetcher extends React.Component {
                             <div style={right}>
 {/*
                                 <img style={logoStyle} src="https://static.tildacdn.com/tild6130-6561-4136-b262-326537376464/logo_school_80.png" alt="Логотип" />
-*/}<QRCode value={"suryuid"+firebase.auth().currentUser.uid} />
+*/}<QRCode style={QRquad} value={"suryuid"+firebase.auth().currentUser.uid} />
                             </div>
                         </div>
                         <div style={tableiro}>
