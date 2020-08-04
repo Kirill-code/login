@@ -94,7 +94,7 @@ export default class Fetcher extends React.Component {
         var user = firebase.auth().currentUser;
         if (user != null) {
 
-            fetch("https://suryaschoolapi.ru.com:8443/subscription-server/uidsubscription/" + firebase.auth().currentUser.uid)
+            fetch("https://www.suryaschoolapi.ru.com:8443/subscription/uidsubscription/" + firebase.auth().currentUser.uid)
                 .then(function (response) {
                     if (response.ok) {
                         return response.json();
